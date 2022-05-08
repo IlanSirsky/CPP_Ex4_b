@@ -5,7 +5,7 @@ namespace coup{
 
     //stealing 2 coins from another player, can be blocked by another Captain or an Ambassador
     void Captain::steal(Player& p){
-        if (!this->game.checkIfTurn(this->name)){
+        if (!this->game->checkIfTurn(this)){
             throw invalid_argument("It is not your turn");
         }
         if (money >= MAX_COINS){
@@ -26,7 +26,7 @@ namespace coup{
             this->last_stolen = 2;
         }
         this->last_stolen_player = &p;
-        this->game.turn_counter++;
+        this->game->turn_counter++;
     }
 
     //blocking another Captain from stealing coins from another player

@@ -11,7 +11,7 @@ namespace coup{
         if (p.getLastOperation() != "assassinate"){ //blocks only a special coup
             throw invalid_argument("Can block only after assassination");        
         } //revive the killed player
-        this->game.revivePlayer(this->game.getLastDied(), this->game.getLastDeadIndex());
+        this->game->revivePlayer(this->game->getLastDied());
         this->last_operation = "block";
     }
 

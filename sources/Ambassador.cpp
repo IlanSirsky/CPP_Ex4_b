@@ -26,7 +26,7 @@ namespace coup{
 
     //transferring 1 coin from one player to another, can't be blocked
     void Ambassador::transfer(Player& from_player, Player & to_player){
-        if (!this->game.checkIfTurn(this->name)){
+        if (!this->game->checkIfTurn(this)){
             throw invalid_argument("It is not your turn");
         }
         if (money >= MAX_COINS){
@@ -38,7 +38,7 @@ namespace coup{
         }
         from_player.addMoney(-1);
         to_player.addMoney(1);
-        this->game.turn_counter++;
+        this->game->turn_counter++;
     }
     
     string Ambassador::role(){

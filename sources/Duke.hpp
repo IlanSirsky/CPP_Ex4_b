@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Player.hpp"
+#include "Game.hpp"
 
 using namespace std;
 namespace coup{
